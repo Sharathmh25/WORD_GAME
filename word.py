@@ -17,96 +17,70 @@ if(s==0):
     print("Please enter the number 1 ")
     i=int(input())
     if(i==1):
-        class part1:
-            def set_Name(self,Name):
-              self.Name=Name
+       class part1:
+            def set_Name(self, Name):
+                self.Name = Name
+
             def get_name(self):
                 return self.Name
-            
-            def set_score(self,score):
-                if score ==0:
-                    
-                    self.score=0
-                elif score ==3 :
-                     self.score=score
-                else :
-                    self.score=score
+
+            def set_score(self, score):
+                if score == 0:
+                    self.score = 0
+                elif score == 3:
+                    self.score = score
+                else:
+                    self.score = score
+
             def get_score(self):
-                return self.score     
-    p=part1()
+                return self.score
+
+    p = part1()
+
     print("Enter Your Name : ")
-    ame=input()
+    ame = input()
     p.set_Name(ame)
-    score=0
-    print("          Guess The Word         ")
-    print("___________________________________")
-    print("J_p_n")
-    i=3
-    while i>0 :
-        print("Enter the word :")
-        s=input()
-        s=s.lower()
-        k="japan"
-        if(s==k):
-            score=score+3
-            p.set_score(score)
-            break
-        else :
-            print("Try to guess")
-            score=score +0
-            p.set_score(score)
-            i=i-1
-    
-    print("level -2")
-    print("          Guess The Word         ")
-    print("___________________________________")
-    print("M_x_c_")
-    i=3
-    while i>0 :
-        print("Enter the word :")
-        s=input()
-        s=s.lower()
-        k="mexico"
-        if(s==k):
-            score=score+3
-            p.set_score(score)
-            break
-        else :
-            print("Try to guess")
-            score=score +0
-            p.set_score(score)
-            i=i-1
-    
-    
+
+    score = 0
+
+        # function defined properly
+    def play_level(question, answer):
+            print("          Guess The Word         ")
+            print("___________________________________")
+            print(question)
+
+            attempts = 3
+            while attempts > 0:
+                guess = input("Enter the word: ").lower()
+
+                if guess == answer:
+                    print("Correct!")
+                    return 3
+                else:
+                    attempts -= 1
+                    print("Try again")
+
+            print("Out of attempts")
+            return 0
+
+        # levels
+    score += play_level("J_p_n", "japan")
+    print("Level -2")
+
+    score += play_level("M_x_c_", "mexico")
     print("Level -3")
-    print("          Guess The Word         ")
-    print("___________________________________")
-    print("A_E_T_R_A_M")
-    i=3
-    while i>0 :
-        print("Enter the word :")
-        s=input()
-        s=s.lower()
-        k="amesterdam"
-        if(s==k):
-            score=score+3
-            p.set_score(score)
-            break
-        else :
-            print("Try to guess")
-            score=score +0
-            p.set_score(score)
-            i=i-1
-            
-            
+
+    score += play_level("A_E_T_R_A_M", "amsterdam")
+
+        # update score in class
+    p.set_score(score)
+
     print(p.get_name())
-    print("Your Score is :",p.get_score())
+    print("Your Score is :", p.get_score())
     print("THANK FOR VISITING OUR GAME ")
     exit()
-        
-                
+
 else:
     print()
     print("THANK FOR VISITING OUR GAME ")
     exit()
-    
