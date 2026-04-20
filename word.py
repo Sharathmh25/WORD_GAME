@@ -102,11 +102,11 @@ if(s==0):
     print(p.get_name())
     print("Your Score is :",p.get_score())
     print("THANK FOR VISITING OUR GAME ")
-    exit
+    exit()
         
                 
 else:
     print()
     print("THANK FOR VISITING OUR GAME ")
-    exit
+    exit()
     
